@@ -281,6 +281,87 @@
   color: var(--muted);
 }
 
+/* ---------- compose (contact form) ---------- */
+.compose-prompt { margin-top: 34px; }
+.compose {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 20px 22px;
+  background: var(--panel);
+}
+.compose-row {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+.compose-row-top { align-items: flex-start; }
+.compose-row:last-of-type { border-bottom: none; }
+.compose-static { color: var(--muted); }
+.compose-label {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--moss);
+}
+.compose-value {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--ink);
+}
+.compose-input,
+.compose-textarea {
+  font-family: var(--serif);
+  font-size: 14.5px;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 4px 0;
+  width: 100%;
+  resize: vertical;
+}
+.compose-input::placeholder,
+.compose-textarea::placeholder { color: var(--muted); }
+.compose-textarea { padding-top: 6px; }
+.compose-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.compose-send {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--bg);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.compose-send:hover { opacity: .85; }
+.compose-send:disabled { opacity: .5; cursor: default; }
+.compose-error {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.compose-sent {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--moss);
+  margin: 0;
+}
+
+@media (max-width: 620px) {
+  .compose-row { grid-template-columns: 1fr; gap: 2px; }
+}
+
 @media (max-width: 620px) {
   .about-grid { grid-template-columns: 1fr; }
   .about-meta { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 14px; }

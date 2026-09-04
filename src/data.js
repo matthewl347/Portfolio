@@ -84,5 +84,9 @@ export const PROFILE = {
   githubLabel: "github.com/matthewl347",
   linkedin: "https://linkedin.com/in/matthew-lin-36a4952ba",
   linkedinLabel: "linkedin.com/in/matthew-lin-36a4952ba",
-  resumeHref: "#",
+  resumeHref: `${import.meta.env.BASE_URL}resume.pdf`,
+  // Sign up at https://formspree.io, create a form, and paste its endpoint
+  // here (looks like "https://formspree.io/f/xxxxabcd"). Until this is set,
+  // the contact form will show an error and point people at your email instead.
+  formEndpoint: "https://formspree.io/f/moeqlvyn",
 };
