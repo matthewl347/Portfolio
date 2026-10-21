@@ -1,37 +1,50 @@
-# matthew-lin-site
+# Matthew Lin Portfolio
+
+Portfolio site built with React + Vite and aligned to Matthew Lin's current resume.
 
 ## Structure
-```
+
+```text
 src/
-  data.js            all editable content: profile info, projects, experience, skills
-  styles.css         all styling
-  App.jsx            composes the sections together
+  data.js            profile, education, projects, experience, skills
+  styles.css         responsive site styling
+  App.jsx            page composition
   components/
     Nav.jsx
     Hero.jsx
     About.jsx
-    Projects.jsx     includes the expandable ProjectRow
+    Projects.jsx
     Experience.jsx
     Skills.jsx
     Contact.jsx
+public/
+  Matthew_Lin_Resume.pdf
+  favicon.svg
 ```
 
-To update the site's content (add a project, change your tagline, swap your email),
-edit `src/data.js` — you shouldn't need to touch the component files for that.
+Most future content changes can be made in `src/data.js` without modifying components.
 
-## Running it
-This folder only has `src/`, not a full project scaffold. Drop it into a Vite React app:
+## Run locally
 
-```
-npm create vite@latest matthew-lin-site -- --template react
-cd matthew-lin-site
+```bash
 npm install
-npm install lucide-react
-```
-
-Then copy this `src/` folder over the generated one (replacing App.jsx and the default
-files), and run:
-
-```
 npm run dev
 ```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deploy to GitHub Pages
+
+The existing Vite base path is `/Portfolio/` and the project includes a `deploy` script:
+
+```bash
+npm run deploy
+```
+
+## Contact form
+
+The contact form sends submissions through the existing Formspree endpoint configured in `src/data.js` as `profile.formEndpoint`. The form posts `name`, `email`, and `message`, and includes loading, success, and error states.

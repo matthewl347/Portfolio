@@ -1,54 +1,41 @@
-import React, { useState } from "react";
-import { ExternalLink, ChevronRight } from "lucide-react";
-import { PROJECTS } from "../data";
+import { ChevronDown } from 'lucide-react'
+import { useState } from 'react'
+import { projects } from '../data.js'
 
-function ProjectRow({ project, isOpen, onToggle }) {
+function ProjectRow({ project, index }) {
+  const [open, setOpen] = useState(index === 0)
   return (
-    <div className="proj-row" data-open={isOpen}>
-      <button className="proj-header" onClick={onToggle} aria-expanded={isOpen}>
-        <span className="proj-id">{project.id}</span>
-        <span className="proj-name">{project.name}</span>
-        <span className="proj-stack-preview">{project.stack.join(" · ")}</span>
-        <ChevronRight className="proj-chevron" size={16} strokeWidth={2} />
-      </button>
-      {isOpen && (
-        <div className="proj-body">
-          <p>{project.desc}</p>
-          <div className="proj-footer">
-            <div className="proj-tags">
-              {project.stack.map((s) => (
-                <span key={s} className="tag">{s}</span>
-              ))}
-            </div>
-            <a href={project.link} className="proj-link">
-              view source <ExternalLink size={13} strokeWidth={2} />
-            </a>
-          </div>
+    <article className={`project-row ${open ? 'expanded' : ''}`}>
+      <button className="project-head" type="button" onClick={() => setOpen(!open)} aria-expanded={open}>
+        <div className="project-index">0{index + 1}</div>
+        <div className="project-title-wrap">
+          <h3>{project.title}</h3>
+          <p>{project.meta}</p>
         </div>
-      )}
-    </div>
-  );
+        <div className="project-tech-preview">{project.tech.slice(0, 3).join(' · ')}</div>
+        <ChevronDown className="project-chevron" size={20} />
+      </button>
+      <div className="project-body">
+        <div className="project-body-inner">
+          <p className="project-description">{project.description}</p>
+          <ul>{project.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+          <div className="tags">{project.tech.map((tech) => <span key={tech}>{tech}</span>)}</div>
+        </div>
+      </div>
+    </article>
+  )
 }
 
 export default function Projects() {
-  const [openProject, setOpenProject] = useState("01");
-
   return (
-    <section className="section" id="projects">
-      <div className="gutter">03</div>
-      <div>
-        <h2 className="sec-title">// projects</h2>
-        <div className="proj-list">
-          {PROJECTS.map((p) => (
-            <ProjectRow
-              key={p.id}
-              project={p}
-              isOpen={openProject === p.id}
-              onToggle={() => setOpenProject(openProject === p.id ? null : p.id)}
-            />
-          ))}
-        </div>
+    <section className="section shell" id="projects">
+      <div className="section-heading">
+        <p className="section-number">02</p>
+        <div><p className="kicker">Selected projects</p><h2>Work that shows how I build.</h2></div>
+      </div>
+      <div className="projects-list">
+        {projects.map((project, index) => <ProjectRow key={project.title} project={project} index={index} />)}
       </div>
     </section>
-  );
+  )
 }

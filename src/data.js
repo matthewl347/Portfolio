@@ -1,92 +1,132 @@
-export const PROJECTS = [
-  {
-    id: "01",
-    name: "goto",
-    desc: "An AI-powered urban planning platform mapping regional transit deserts, built in 24 hours and placed first out of 20+ teams. Led data and research, aggregating NYSED, CDTA, and Census ACS datasets, and designed the walk-wait-ride methodology behind the platform's route-scoring engine.",
-    stack: ["Python", "Data Analysis", "Route Scoring"],
-    link: "#",
-  },
-  {
-    id: "02",
-    name: "market-simulator",
-    desc: "A Godot game built with a small team, where I wrote enemy and item behavior systems in C# using signals, nodes, and scene composition. Designed a probability-based encounter algorithm to balance spawn pacing against difficulty.",
-    stack: ["C#", "Godot", "Game AI"],
-    link: "#",
-  },
-  {
-    id: "03",
-    name: "sunhees-farm-kitchen",
-    desc: "A UI/UX redesign for a course final project, rebuilt from high-fidelity Figma prototypes. Streamlined the site's information architecture and cut redundant flows to improve overall navigability.",
-    stack: ["Figma", "UX Research"],
-    link: "#",
-  },
-  {
-    id: "04",
-    name: "wise-outreach",
-    desc: "The official web app for Nebraska Wesleyan's WISE program, built to support educator outreach. Engineered responsive frontend components and reworked core navigation to remove layout redundancies.",
-    stack: ["HTML", "CSS", "JavaScript"],
-    link: "#",
-  },
-];
+export const profile = {
+  name: 'Matthew Lin',
+  eyebrow: 'Computer Science + Information & Web Technologies @ RPI',
+  headline: 'I build reliable software across backend systems, full-stack apps, and embedded hardware.',
+  summary:
+    'I am an RPI student focused on software engineering problems where correctness, performance, and real users matter. My experience spans ASP.NET Core backend systems, React and Node.js applications, embedded ESP32 projects, and data-driven tools.',
+  location: 'New York City, NY',
+  email: 'matthewlin559@gmail.com',
+  github: 'https://github.com/matthewl347',
+  linkedin: 'https://linkedin.com/in/matthew-lin-36a4952ba',
+  resume: `${import.meta.env.BASE_URL}Matthew_Lin_Resume.pdf`,
+  formEndpoint: 'https://formspree.io/f/moeqlvyn',
+}
 
-export const COMMITS = [
-  {
-    hash: "d4a1c7",
-    date: "Apr 2026",
-    role: "First Place, HV Open Data Hackathon",
-    org: "Data & Research Lead",
-    desc: "Won first out of 20+ teams building \"GoTo,\" an AI-powered transit-desert mapping platform. Aggregated and validated NYSED, CDTA, and Census ACS datasets and designed the walk-wait-ride scoring methodology.",
-  },
-  {
-    hash: "9f6e22",
-    date: "Jul 2026 — Aug 2026",
-    role: "Software Engineering Intern",
-    org: "NYC DOE, Division of Instructional and Information Technology",
-    desc: "Refactored a monolithic ASP.NET Core backend into modular components with structured error handling. Consolidated registration writes into atomic transactions and resolved multi-user concurrency edge cases, including document upload race conditions.",
-  },
-  {
-    hash: "3c08b5",
-    date: "Mar 2025 — Aug 2025",
-    role: "Frontend Engineer / Developer",
-    org: "Bridge to College",
-    desc: "Co-developed interactive virtual experiences in Unity (C#), writing application logic and state management systems for fluid runtime execution. Designed high-fidelity UIs in Figma, translated into responsive cross-platform clients.",
-  },
-  {
-    hash: "17a9d0",
-    date: "May 2025 — Jun 2025",
-    role: "Frontend Web Developer & Project Manager",
-    org: "Nebraska Wesleyan University",
-    desc: "Built the official web app for NWU's WISE program to enhance digital outreach and educator engagement. Engineered responsive, accessible frontend components and optimized core site navigation.",
-  },
-];
+export const highlights = [
+  { value: '3', label: 'Software & web roles' },
+  { value: '1st', label: 'HV Open Data Hackathon' },
+  { value: '3.70', label: 'RPI GPA' },
+]
 
-export const MANIFEST = {
-  languages: ["C", "C++", "C#", "Java", "Python", "JavaScript", "SQL"],
-  frameworks: ["ASP.NET Core", "Unity", "Godot"],
-  design: ["Figma", "Adobe", "Wix"],
-  coursework: ["Data Structures", "Discrete Math", "Comp. Architecture & OS", "Linear Algebra"],
-};
+export const education = {
+  school: 'Rensselaer Polytechnic Institute',
+  degree: 'B.S. in Computer Science and Information & Web Technologies',
+  graduation: 'Expected Dec. 2028',
+  gpa: '3.70 / 4.00',
+  coursework: [
+    'Data Structures',
+    'Discrete Mathematics and Computing',
+    'Computer Architecture and Operating Systems',
+    'Linear Algebra',
+  ],
+}
 
-export const PROFILE = {
-  name: "Matthew Lin",
-  navPath: "~/matthew-lin",
-  school: "Rensselaer Polytechnic Institute",
-  major: "CS & Information / Web Technologies",
-  tagline:
-    "CS & ITWS student at RPI who likes turning messy legacy systems and rough interfaces into something modular, tested, and easy to reason about.",
-  location: "Brooklyn, NY",
-  gpa: "3.70 / 4.00",
-  gradClass: "RPI, Class of 2028",
-  openTo: "summer 2027 internships",
-  email: "matthewlin559@gmail.com",
-  phone: "929-308-6492",
-  github: "https://github.com/matthewl347",
-  githubLabel: "github.com/matthewl347",
-  linkedin: "https://linkedin.com/in/matthew-lin-36a4952ba",
-  linkedinLabel: "linkedin.com/in/matthew-lin-36a4952ba",
-  resumeHref: `${import.meta.env.BASE_URL}resume.pdf`,
-  // Sign up at https://formspree.io, create a form, and paste its endpoint
-  // here (looks like "https://formspree.io/f/xxxxabcd"). Until this is set,
-  // the contact form will show an error and point people at your email instead.
-  formEndpoint: "https://formspree.io/f/moeqlvyn",
-};
+export const projects = [
+  {
+    title: 'Better EHR',
+    meta: 'HackRPI 2025',
+    featured: true,
+    description:
+      'A full-stack electronic health record system with patient records, PDF export, real-time physician messaging, and AI-assisted visit summaries.',
+    bullets: [
+      'Built patient record creation and retrieval plus PDF export and real-time physician messaging on a four-person team.',
+      'Integrated AssemblyAI streaming speech-to-text with Gemini 2.0 Flash to turn visit transcripts into structured clinical summaries.',
+    ],
+    tech: ['React', 'Node.js', 'Express.js', 'Firebase', 'WebSockets', 'Gemini API', 'AssemblyAI'],
+  },
+  {
+    title: 'GoTo: Transit Desert Analysis',
+    meta: 'HV Open Data Hackathon · Overall 1st Place',
+    featured: true,
+    description:
+      'A regional transit-access analysis tool that combines demographic and transit data to surface underserved areas and support route planning.',
+    bullets: [
+      'Collected and cleaned population-density, income, and bus-stop datasets in Python, standardizing formats and filtering irrelevant records.',
+      'Collaborated on a four-person demo showing transit-access scores, proposed bus routes, and route extensions.',
+    ],
+    tech: ['Python', 'HTML', 'Data Cleaning', 'Open Data'],
+  },
+  {
+    title: 'Mess Environment Sensor System',
+    meta: 'Western Digital sponsored · Sep. 2026 — Present',
+    featured: true,
+    description:
+      'An ESP32-based indoor monitoring system for studying relationships between building age and environmental conditions.',
+    bullets: [
+      'Assembled ESP32 hardware and flashed firmware with ESP-IDF on a three-person team.',
+      'Verified BME280 and BH1750 sensors for temperature, humidity, pressure, and light measurements.',
+    ],
+    tech: ['ESP32', 'ESP-IDF', 'C', 'BME280', 'BH1750'],
+  },
+]
+
+export const experience = [
+  {
+    role: 'Software Development Internship',
+    company: 'NYC DOE — Division of Instructional and Information Technology',
+    location: 'New York, NY',
+    dates: 'Jul. 2026 — Aug. 2026',
+    bullets: [
+      'Fixed document corruption during overlapping uploads by consolidating writes into a single database transaction and validating the fix with repeated sample uploads.',
+      'Refactored a large legacy ASP.NET Core document-processing function into smaller, reusable methods for individual processing steps.',
+      'Consolidated registration database writes into a single transaction to keep related updates consistent.',
+    ],
+    tech: ['ASP.NET Core', 'Database Transactions', 'Debugging', 'Concurrency'],
+  },
+  {
+    role: 'Web Development & Project Coordination',
+    company: 'Nebraska Wesleyan University — WISE Program',
+    location: '',
+    dates: 'May 2025 — Jun. 2025',
+    bullets: [
+      'Led a six-person team to deliver a working promotional website prototype for a university program.',
+      'Implemented site navigation, dropdown menus, and frontend styling using HTML, CSS, and JavaScript.',
+      'Maintained a shared task list, divided frontend and backend work, and coordinated Git contributions for asynchronous collaboration.',
+    ],
+    tech: ['JavaScript', 'HTML/CSS', 'Git', 'Project Coordination'],
+  },
+  {
+    role: 'Software Development Internship',
+    company: 'Bridge to College',
+    location: 'Remote · Part-time',
+    dates: 'Mar. 2025 — Aug. 2025',
+    bullets: [
+      'Developed player movement and environmental interactions in Unity and C# for an HBCU campus-exploration prototype.',
+      'Built building-entry and school-information interactions and designed the application menu and campus environment in Figma.',
+    ],
+    tech: ['Unity', 'C#', 'Figma', 'State Management'],
+  },
+]
+
+export const skills = [
+  {
+    category: 'Languages',
+    items: ['C', 'C++', 'C#', 'Java', 'Python', 'JavaScript', 'SQL', 'HTML/CSS'],
+  },
+  {
+    category: 'Frameworks & Libraries',
+    items: ['ASP.NET Core', 'React', 'Express.js', 'Bootstrap', 'Unity'],
+  },
+  {
+    category: 'Backend & Data',
+    items: ['Node.js', 'Firebase Firestore', 'REST APIs', 'WebSockets', 'Database Transactions'],
+  },
+  {
+    category: 'Hardware & Tools',
+    items: ['Git', 'Figma', 'ESP32', 'ESP-IDF'],
+  },
+  {
+    category: 'APIs & Technologies',
+    items: ['Gemini API', 'AssemblyAI API', 'Real-time Messaging', 'Speech-to-Text'],
+  },
+]

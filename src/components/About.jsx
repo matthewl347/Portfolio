@@ -1,40 +1,31 @@
-import React from "react";
-import { PROFILE } from "../data";
+import { education } from '../data.js'
 
 export default function About() {
   return (
-    <section className="section" id="about">
-      <div className="gutter">02</div>
-      <div>
-        <h2 className="sec-title">// about</h2>
-        <div className="about-grid">
-          <div className="about-body">
-            <p>
-              I'm a Computer Science and Information & Web Technologies
-              major at RPI, currently splitting time between coursework,
-              a growing project list, and internships where I get handed
-              legacy code and asked to make it behave.
-            </p>
-            <p>
-              I care most about the parts of software that are easy to
-              get subtly wrong — atomic writes, concurrency edge cases,
-              interfaces that hold up once real users touch them. That
-              pull toward both backend correctness and frontend clarity
-              is basically my major's whole personality.
-            </p>
+    <section className="section shell" id="about">
+      <div className="section-heading">
+        <p className="section-number">01</p>
+        <div><p className="kicker">About</p><h2>Engineering across the stack.</h2></div>
+      </div>
+      <div className="about-grid">
+        <div className="about-copy">
+          <p>
+            I enjoy technical challenges where I can understand a system end-to-end: reproducing a bug, tracing its cause, designing a safer implementation, and validating the result. That mindset has shaped my work across backend systems, web products, game development, and embedded hardware.
+          </p>
+          <p>
+            I am especially interested in software engineering roles where I can own meaningful features, work close to real users, and keep developing stronger systems-level intuition.
+          </p>
+        </div>
+        <div className="education-card">
+          <span className="mini-label">Education</span>
+          <h3>{education.school}</h3>
+          <p>{education.degree}</p>
+          <div className="education-meta"><span>{education.graduation}</span><span>GPA {education.gpa}</span></div>
+          <div className="course-list">
+            {education.coursework.map((course) => <span key={course}>{course}</span>)}
           </div>
-          <dl className="about-meta">
-            <dt>based in</dt>
-            <dd>{PROFILE.location}</dd>
-            <dt>university</dt>
-            <dd>{PROFILE.gradClass}</dd>
-            <dt>gpa</dt>
-            <dd>{PROFILE.gpa}</dd>
-            <dt>open to</dt>
-            <dd>{PROFILE.openTo}</dd>
-          </dl>
         </div>
       </div>
     </section>
-  );
+  )
 }

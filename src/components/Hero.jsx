@@ -1,58 +1,40 @@
-import React from "react";
-import { Mail, FileDown, Check } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./icons";
-import { PROFILE } from "../data";
-import { useCopyEmail } from "../useCopyEmail";
+import { ArrowDown, ArrowUpRight, Mail } from 'lucide-react'
+import { highlights, profile } from '../data.js'
 
 export default function Hero() {
-  const { copied, handleClick } = useCopyEmail(PROFILE.email);
-
   return (
-    <section className="section hero">
-      <div className="gutter">01</div>
-      <div>
-        <p className="hero-code">
-          <span className="kw">class</span> MatthewLin(
-          <span className="kw">SoftwareEngineer</span>):{"\n"}
-          {"    "}major = <span className="str">"{PROFILE.major}"</span>
-          {"\n"}
-          {"    "}school = <span className="str">"{PROFILE.school}"</span>
-          <span className="cursor" />
-        </p>
-        <p className="hero-tagline">{PROFILE.tagline}</p>
-        <div className="hero-links">
-          <a className="icon-link" href={PROFILE.github} aria-label="GitHub">
-            <GithubIcon />
-          </a>
-          <a
-            className="icon-link"
-            href={PROFILE.linkedin}
-            aria-label="LinkedIn"
-          >
-            <LinkedinIcon />
-          </a>
-          <a
-            className="icon-link"
-            href="#contact"
-            onClick={handleClick}
-            aria-label="Copy email address"
-            title={copied ? "Copied!" : PROFILE.email}
-          >
-            {copied ? (
-              <Check size={17} strokeWidth={1.8} />
-            ) : (
-              <Mail size={17} strokeWidth={1.8} />
-            )}
-          </a>
-          <a
-            className="resume-link"
-            href={PROFILE.resumeHref}
-            download="Matthew_Lin_Resume.pdf"
-          >
-            <FileDown size={15} strokeWidth={1.8} /> resume.pdf
-          </a>
+    <section className="hero shell" id="top">
+      <div className="hero-copy">
+        <p className="eyebrow"><span className="status-dot" />{profile.eyebrow}</p>
+        <h1>{profile.headline}</h1>
+        <p className="hero-summary">{profile.summary}</p>
+        <div className="hero-actions">
+          <a className="button primary" href="#projects">View my work <ArrowDown size={17} /></a>
+          <a className="button secondary" href={profile.resume} target="_blank" rel="noreferrer">View resume <ArrowUpRight size={17} /></a>
+        </div>
+        <div className="socials" aria-label="Social links">
+          <a href={profile.github} target="_blank" rel="noreferrer"><ArrowUpRight size={19} /> GitHub</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer"><ArrowUpRight size={19} /> LinkedIn</a>
+          <a href={`mailto:${profile.email}`}><Mail size={19} /> Email</a>
         </div>
       </div>
+      <aside className="hero-card" aria-label="Quick profile summary">
+        <p className="card-kicker">Currently focused on</p>
+        <div className="focus-stack">
+          <span>Backend systems</span>
+          <span>Full-stack engineering</span>
+          <span>Embedded software</span>
+          <span>Data-driven products</span>
+        </div>
+        <div className="stats-grid">
+          {highlights.map((item) => (
+            <div key={item.label} className="stat">
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </aside>
     </section>
-  );
+  )
 }
