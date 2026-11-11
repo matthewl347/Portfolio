@@ -1,10 +1,10 @@
 export const profile = {
   name: 'Matthew Lin',
-  eyebrow: 'Computer Science + Information & Web Technologies @ RPI',
+  eyebrow: 'Computer and Information Science @ RPI',
   headline: 'I build reliable software across backend systems, full-stack apps, and embedded hardware.',
   summary:
-    'I am an RPI student focused on software engineering problems where correctness, performance, and real users matter. My experience spans ASP.NET Core backend systems, React and Node.js applications, embedded ESP32 projects, and data-driven tools.',
-  location: 'New York City, NY',
+    'RPI Computer and Information Science student (GPA 3.70) with internships in backend systems, web development, and Unity prototyping. I work on problems where correctness, performance, and real users matter — from ASP.NET Core services to React apps and ESP32 firmware.',
+  location: 'Brooklyn, NY',
   email: 'matthewlin559@gmail.com',
   github: 'https://github.com/matthewl347',
   linkedin: 'https://linkedin.com/in/matthew-lin-36a4952ba',
@@ -20,91 +20,96 @@ export const highlights = [
 
 export const education = {
   school: 'Rensselaer Polytechnic Institute',
-  degree: 'B.S. in Computer Science and Information & Web Technologies',
-  graduation: 'Expected Dec. 2028',
+  degree: 'B.S. in Computer and Information Science',
+  graduation: 'Expected May 2028',
   gpa: '3.70 / 4.00',
   coursework: [
     'Data Structures',
-    'Discrete Mathematics and Computing',
-    'Computer Architecture and Operating Systems',
+    'Algorithms',
+    'Discrete Math',
+    'Computer Architecture & OS',
     'Linear Algebra',
   ],
 }
 
 export const projects = [
   {
-    title: 'Better EHR',
-    meta: 'HackRPI 2025',
+    title: 'Mess Environment Sensor System',
+    meta: 'Western Digital sponsored · Sep. 2026 — Present',
     featured: true,
+    href: 'https://github.com/AavanVadiwala/MESS-RCOS',
     description:
-      'A full-stack electronic health record system with patient records, PDF export, real-time physician messaging, and AI-assisted visit summaries.',
+      'A Western Digital–sponsored indoor monitoring system that streams environmental data from ESP32 nodes, cleans invalid readings, and shows live conditions in a JavaScript GUI.',
     bullets: [
-      'Built patient record creation and retrieval plus PDF export and real-time physician messaging on a four-person team.',
-      'Integrated AssemblyAI streaming speech-to-text with Gemini 2.0 Flash to turn visit transcripts into structured clinical summaries.',
+      'Achieved 97% data-delivery reliability streaming from ESP32 nodes over a local network by implementing device-to-device networking and flashing ESP-IDF firmware in C.',
+      'Removed 98% of invalid readings across 4 environmental metrics by cleaning raw BME280 and BH1750 sensor data in R, producing reliable inputs for the display.',
+      'Gave users real-time visibility into indoor conditions by building a JavaScript GUI for live sensor readings on a three-person team.',
     ],
-    tech: ['React', 'Node.js', 'Express.js', 'Firebase', 'WebSockets', 'Gemini API', 'AssemblyAI'],
+    tech: ['C', 'Python', 'R', 'JavaScript', 'ESP32', 'ESP-IDF'],
   },
   {
     title: 'GoTo: Transit Desert Analysis',
     meta: 'HV Open Data Hackathon · Overall 1st Place',
     featured: true,
+    href: 'https://github.com/EricL0512/GoTo-Transit-Planner',
     description:
-      'A regional transit-access analysis tool that combines demographic and transit data to surface underserved areas and support route planning.',
+      'A regional transit-access analysis tool that maps underserved areas, scores proposed bus routes, and visualizes before/after impact. Won overall 1st place out of 20 teams.',
     bullets: [
-      'Collected and cleaned population-density, income, and bus-stop datasets in Python, standardizing formats and filtering irrelevant records.',
-      'Collaborated on a four-person demo showing transit-access scores, proposed bus routes, and route extensions.',
+      'Won Overall 1st Place out of 20 teams at the HV Open Data Hackathon by building a regional transit-access score map proposing 15+ bus routes and extensions on a four-person team.',
+      'Enabled transit-access scoring by cleaning and standardizing 100+ records across 3 datasets (population, income, bus stops) in Python.',
     ],
-    tech: ['Python', 'HTML', 'Data Cleaning', 'Open Data'],
+    tech: ['Python', 'HTML'],
   },
   {
-    title: 'Mess Environment Sensor System',
-    meta: 'Western Digital sponsored · Sep. 2026 — Present',
+    title: 'Better EHR',
+    meta: 'HackRPI 2025',
     featured: true,
+    href: 'https://github.com/WeihaoWu30/hackrpi-2025',
     description:
-      'An ESP32-based indoor monitoring system for studying relationships between building age and environmental conditions.',
+      'A full-stack electronic health record system with patient records, PDF export, real-time messaging, and AI-assisted visit summaries.',
     bullets: [
-      'Assembled ESP32 hardware and flashed firmware with ESP-IDF on a three-person team.',
-      'Verified BME280 and BH1750 sensors for temperature, humidity, pressure, and light measurements.',
+      'Cut manual note-taking time by an estimated 40% by integrating AssemblyAI streaming speech-to-text with Gemini 2.0 Flash to auto-generate structured clinical summaries.',
+      'Built a full-stack EHR at HackRPI 2025 on a four-person team, with patient records, PDF export, and real-time messaging using React, Express, Firestore, and WebSockets.',
     ],
-    tech: ['ESP32', 'ESP-IDF', 'C', 'BME280', 'BH1750'],
+    tech: ['React', 'Node.js', 'Firebase', 'WebSockets'],
   },
 ]
 
 export const experience = [
   {
-    role: 'Software Development Internship',
+    role: 'Software Engineer Intern',
     company: 'NYC DOE — Division of Instructional and Information Technology',
     location: 'New York, NY',
     dates: 'Jul. 2026 — Aug. 2026',
     bullets: [
-      'Fixed document corruption during overlapping uploads by consolidating writes into a single database transaction and validating the fix with repeated sample uploads.',
-      'Refactored a large legacy ASP.NET Core document-processing function into smaller, reusable methods for individual processing steps.',
-      'Consolidated registration database writes into a single transaction to keep related updates consistent.',
+      'Cut upload errors by 40% across 100+ daily submissions by consolidating concurrent writes into a single atomic database transaction, resolving document corruption.',
+      'Reduced code complexity by 30% by refactoring a 1,000-line legacy ASP.NET Core document-processing function into 5 modular, reusable methods, speeding up team debugging.',
+      'Protected enrollment data integrity across 100+ student records by wrapping registration writes in a single transaction, preventing partial-write failures.',
     ],
-    tech: ['ASP.NET Core', 'Database Transactions', 'Debugging', 'Concurrency'],
+    tech: ['ASP.NET Core', 'SQL', 'Database Transactions'],
   },
   {
-    role: 'Web Development & Project Coordination',
+    role: 'Web Developer & Project Coordinator',
     company: 'Nebraska Wesleyan University — WISE Program',
-    location: '',
+    location: 'Remote',
     dates: 'May 2025 — Jun. 2025',
     bullets: [
-      'Led a six-person team to deliver a working promotional website prototype for a university program.',
-      'Implemented site navigation, dropdown menus, and frontend styling using HTML, CSS, and JavaScript.',
-      'Maintained a shared task list, divided frontend and backend work, and coordinated Git contributions for asynchronous collaboration.',
+      'Delivered a working website prototype in 8 weeks by leading a six-person team, presenting it to program stakeholders to decide on continued development.',
+      'Kept a remote team on schedule across 10+ tasks by splitting frontend/backend work and managing the team’s Git workflow.',
+      'Gave stakeholders a fully navigable prototype by building navigation, dropdown menus, and responsive styling across 6 pages in HTML, CSS, and JavaScript.',
     ],
-    tech: ['JavaScript', 'HTML/CSS', 'Git', 'Project Coordination'],
+    tech: ['JavaScript', 'HTML/CSS', 'Git'],
   },
   {
-    role: 'Software Development Internship',
+    role: 'Software Engineer Intern',
     company: 'Bridge to College',
-    location: 'Remote · Part-time',
+    location: 'Remote',
     dates: 'Mar. 2025 — Aug. 2025',
     bullets: [
-      'Developed player movement and environmental interactions in Unity and C# for an HBCU campus-exploration prototype.',
-      'Built building-entry and school-information interactions and designed the application menu and campus environment in Figma.',
+      'Built a virtual HBCU campus tour for prospective students by developing a Unity and C# prototype with player movement and 10+ interactive features; presented to stakeholders.',
+      'Defined the layout and navigation flow for the Unity prototype by designing 5 menu and campus-environment screens in Figma.',
     ],
-    tech: ['Unity', 'C#', 'Figma', 'State Management'],
+    tech: ['Unity', 'C#', 'Figma'],
   },
 ]
 
@@ -115,18 +120,14 @@ export const skills = [
   },
   {
     category: 'Frameworks & Libraries',
-    items: ['ASP.NET Core', 'React', 'Express.js', 'Bootstrap', 'Unity'],
+    items: ['ASP.NET Core', 'React', 'Node.js', 'Express.js', 'Tailwind CSS', 'Bootstrap', 'Jest', 'Unity'],
   },
   {
-    category: 'Backend & Data',
-    items: ['Node.js', 'Firebase Firestore', 'REST APIs', 'WebSockets', 'Database Transactions'],
+    category: 'Backend, Data & AI',
+    items: ['REST APIs', 'JSON', 'WebSockets', 'Firebase Firestore'],
   },
   {
-    category: 'Hardware & Tools',
-    items: ['Git', 'Figma', 'ESP32', 'ESP-IDF'],
-  },
-  {
-    category: 'APIs & Technologies',
-    items: ['Gemini API', 'AssemblyAI API', 'Real-time Messaging', 'Speech-to-Text'],
+    category: 'Embedded, Tools & Practices',
+    items: ['ESP32', 'ESP-IDF', 'Embedded C', 'Git', 'Linux', 'Vite', 'Figma', 'Agile'],
   },
 ]

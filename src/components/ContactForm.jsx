@@ -48,11 +48,10 @@ export default function ContactForm() {
   if (status === STATUS.success) {
     return (
       <div className="contact-form-success" role="status">
-        <p className="mini-label">Message sent</p>
-        <h3>Thanks for reaching out.</h3>
-        <p>Your message was sent successfully. I&apos;ll get back to you as soon as I can.</p>
+        <h3>Message sent</h3>
+        <p>Thanks. I&apos;ll reply as soon as I can.</p>
         <button className="contact-reset" type="button" onClick={() => setStatus(STATUS.idle)}>
-          Send another message
+          Send another
         </button>
       </div>
     )
@@ -60,11 +59,6 @@ export default function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-      <div className="contact-form-heading">
-        <p className="mini-label">Send a message</p>
-        <p>Use the form below and it will be delivered directly to my inbox.</p>
-      </div>
-
       <div className="contact-form-grid">
         <label className="contact-field">
           <span>Name</span>
@@ -72,7 +66,6 @@ export default function ContactForm() {
             type="text"
             name="name"
             autoComplete="name"
-            placeholder="Your name"
             value={fields.name}
             onChange={updateField('name')}
             required
@@ -85,7 +78,6 @@ export default function ContactForm() {
             type="email"
             name="email"
             autoComplete="email"
-            placeholder="you@example.com"
             value={fields.email}
             onChange={updateField('email')}
             required
@@ -98,7 +90,6 @@ export default function ContactForm() {
         <textarea
           name="message"
           rows="6"
-          placeholder="Tell me what you'd like to talk about..."
           value={fields.message}
           onChange={updateField('message')}
           required
@@ -108,12 +99,12 @@ export default function ContactForm() {
       <input className="contact-honeypot" type="text" name="_gotcha" tabIndex="-1" autoComplete="off" />
 
       <div className="contact-form-footer">
-        <button className="button primary contact-submit" type="submit" disabled={status === STATUS.sending}>
-          {status === STATUS.sending ? 'Sending...' : 'Send message'}
+        <button className="button" type="submit" disabled={status === STATUS.sending}>
+          {status === STATUS.sending ? 'Sending…' : 'Send'}
         </button>
         {status === STATUS.error && (
           <p className="contact-form-error" role="alert">
-            Something went wrong. You can still email me directly at{' '}
+            The form did not send. Email me at{' '}
             <a href={`mailto:${profile.email}`}>{profile.email}</a>.
           </p>
         )}

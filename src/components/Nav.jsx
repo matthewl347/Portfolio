@@ -7,6 +7,7 @@ const links = [
   ['Projects', '#projects'],
   ['Experience', '#experience'],
   ['Skills', '#skills'],
+  ['Contact', '#contact'],
 ]
 
 export default function Nav() {
@@ -14,7 +15,7 @@ export default function Nav() {
   return (
     <header className="nav-wrap">
       <nav className="nav shell" aria-label="Primary navigation">
-        <a className="brand" href="#top" aria-label="Matthew Lin home">ML<span>.</span></a>
+        <a className="brand" href="#top">{profile.name}</a>
         <div className={`nav-links ${open ? 'open' : ''}`}>
           {links.map(([label, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
